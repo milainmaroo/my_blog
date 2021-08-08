@@ -22,15 +22,16 @@
         </div>
     </nav>
     <section id="main-container">
-        <h3>All Blogs</h3>
-        <div class="blog-container">
-            <h4 class="title">Title</h4>
-            <p class="snippet">Snippet</p>
-        </div>
-        <div class="blog-container">
-            <h4 class="title">Title 2</h4>
-            <p class="snippet">Snippet 2</p>
-        </div>
+        <h3>Submit Your Blog</h3>
+        <form>
+            <label for="title">Blog title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="snippet">Blog snippet:</label>
+            <input type="text" id="snippet" name="snippet" required>
+            <label for="body">Blog body:</label>
+            <textarea type="text" id="body" name="body" required></textarea>
+            <button id="submit">Submit</button>
+        </form>
     </section>
     <footer>
         Copyright &copy; Norine Oo 2021

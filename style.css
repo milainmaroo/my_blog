@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f8;
+    margin: 20px 120px;
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #989898;
+}
+
+a:hover {
+    color: #ff5733;
+}
+
+/* Nav */
+#nav-container {
+    border-bottom: 1px solid #989898;
+}
+
+#nav-container h1 {
+    font-size: 35px;
+    color:#ff5733;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: #989898;
+}
+
+.nav-titles {
+    display: flex;
+}
+
+.nav-titles li {
+    padding: 0 10px;
+}
+
+/* Section - Main Container */
+#main-container h3 {
+    margin: 30px 0;
+    font-size: 25px;
+}
+
+/* Home Page */
+.blog-container {
+    border-left: 4px solid #ff5733;
+    margin: 10px 0 20px 0;
+    padding: 0 20px;
+    font-size: 15px;
+}
+
+.title {
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+/* About Page */
+.about-container p {
+    margin: 10px 0 20px 0;
+}
+
+/* Create Page */
+form {
+    border: 1px solid green;
+    margin: auto;
+}
+
+#title, #snippet {
+    display: flex;
+    margin: 5px 0 20px 0;
+    height: 25px;
+    width: 350px;
+}
+
+#body {
+    display: flex;
+    margin: 5px 0 20px 0;
+    height: 150px;
+    width: 350px;
+}
+
+#submit {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #ff5733;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: #989898;
+    margin-top: 30px;
+}
