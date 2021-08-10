@@ -1,26 +1,31 @@
 const express = require('express');
 const app = express();
 
+// register view engine
+app.set('view engine', 'ejs');
+
 // listen for request
 app.listen(3000);
 
+// make a request and send a response
 app.get('/', (req, res) => {
-    res.sendFile('./views/index.html', {root:__dirname});
+    const blogs = [
+        {title:'Title A', snippet: 'This is about A'},
+        {title:'Title B', snippet: 'This is about B'},
+        {title:'Title C', snippet: 'This is about C'},
+    ];
+    res.render('index', { title: 'Home', blogs});
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile('./views/about.html', {root:__dirname});
-});
-
-app.get('/about-me', (req, res) => {
-    res.redirect('/about');
+    res.render('about', { title: 'About' });
 });
 
 app.get('/create', (req, res) => {
-    res.sendFile('./views/create.html', {root:__dirname});
+    res.render('create', { title: 'Create New Blog' });
 });
 
 app.use((req, res) => {
-    res.status(404).sendFile('./views/404.html', {root: __dirname});
-})
+    res.status(404).render('404', { title: 'Page Not Found' });
+});
 

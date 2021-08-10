@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <section id="main-container">
+        <h3>All Blogs</h3>
+        <!-- <div class="blog-container">
+            <h4 class="title">Title</h4>
+            <p class="snippet">Snippet</p>
+        </div>
+        <div class="blog-container">
+            <h4 class="title">Title 2</h4>
+            <p class="snippet">Snippet 2</p>
+        </div> -->
+     <%   blogs.forEach(blog => { %>
+            <h4 class="title"><%= blog.title %></h4>
+            <p class="snippet"><%= blog.snippet %></p>      
+     <%  }) %>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
