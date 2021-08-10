@@ -1,4 +1,6 @@
 const express = require('express');
+const morgan = require('morgan');
+
 const app = express();
 
 // register view engine
@@ -6,6 +8,12 @@ app.set('view engine', 'ejs');
 
 // listen for request
 app.listen(3000);
+
+// create middleware
+//app.use(morgan('dev'));
+
+// middleware for static files
+app.use(express.static('public'));
 
 // make a request and send a response
 app.get('/', (req, res) => {

@@ -13,10 +13,17 @@
             <h4 class="title">Title 2</h4>
             <p class="snippet">Snippet 2</p>
         </div> -->
-     <%   blogs.forEach(blog => { %>
-            <h4 class="title"><%= blog.title %></h4>
-            <p class="snippet"><%= blog.snippet %></p>      
-     <%  }) %>
+    <%    if (blogs.length > 0) { %>
+            <%   blogs.forEach(blog => { %>
+                <div class="blog-container">
+                    <h4 class="title"><%= blog.title %></h4>
+                    <p class="snippet"><%= blog.snippet %></p>   
+                </div>   
+         <%  }) %>
+      <%   } else { %>
+             <p>There is no blog to display...</p>
+     <%    } %>
+
     </section>
     <%- include('./partials/footer.ejs') %>
 </body>
