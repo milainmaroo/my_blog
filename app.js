@@ -1,13 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
 
+// connect to database
+const dbURL = 'mongodb+srv://netninja:test4321@nodetuts.tm0wj.mongodb.net/my-blogs?retryWrites=true&w=majority';
+mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true})
+        .then(result => app.listen(3000)) // listen for request
+        .catch(err => console.log(err));
+
 // register view engine
 app.set('view engine', 'ejs');
-
-// listen for request
-app.listen(3000);
 
 // create middleware
 //app.use(morgan('dev'));
