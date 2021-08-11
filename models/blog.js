@@ -18,6 +18,6 @@ const blogSchema = new Schema({
 }, { timestamps: true });
 
 // Create Model
-const Blog = mongoose('Blog', 'blogSchema');
+const Blog = mongoose.model('Blog', blogSchema);
 
 module.exports = Blog;
