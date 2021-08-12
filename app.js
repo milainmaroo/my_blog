@@ -5,7 +5,7 @@ const Blog = require('./models/blog');
 const app = express();
 
 // connect to database
-// const dbURL = 'mongodb+srv://netninja:test4321@nodetuts.tm0wj.mongodb.net/my-blogs?retryWrites=true&w=majority';
+const dbURL = 'mongodb+srv://netninja:test4321@nodetuts.tm0wj.mongodb.net/my-blogs?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true})
         .then(result => app.listen(3000)) // listen for request
         .catch(err => console.log(err));
@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 
 // middleware for static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 
 // Routes
@@ -33,6 +34,14 @@ app.get('/about', (req, res) => {
 // Create Page (create.ejs)
 app.get('/create', (req, res) => {
     res.render('create', { title: 'Create New Blog' });
+});
+
+// Add New Blog to Home Page
+app.post('/', (req, res) => {
+    const blog = new Blog(req.body);
+    blog.save()
+        .then(result => res.redirect('/'))
+        .catch(err => console.log(err)); 
 });
 
 // 404 Page (404.ejs)
