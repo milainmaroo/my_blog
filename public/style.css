@@ -124,6 +124,23 @@ form {
     padding: 15px 0;
 }
 
+/* 404 Page */
+.not-found {
+    max-width: 600px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.not-found p {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.not-found a {
+    text-decoration: underline;
+    color: #ff5733;
+}
+
 /* Footer */
 footer {
     text-align: center;
