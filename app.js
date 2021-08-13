@@ -44,6 +44,26 @@ app.post('/', (req, res) => {
         .catch(err => console.log(err)); 
 });
 
+// Get a single blog
+app.get('/:id', (req,res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then(result => {
+            res.render('details', { blog: result, title: 'Blog Details '});
+        })
+        .catch(err => console.log(err));
+});
+
+//Delete a single blog
+app.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+        .then(result => res.json({ redirect: '/' }))
+        .catch(err => console.log(err));
+});
+
+  
+
 // 404 Page (404.ejs)
 app.use((req, res) => {
     res.status(404).render('404', { title: 'Page Not Found' });
